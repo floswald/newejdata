@@ -1,0 +1,33 @@
+---
+title: "{{< var ej.full >}}'s Data Editor Website"
+---
+
+This website provides all the relevant information regarding the Data and Code Availability Policy and pre-acceptance reproducibility checks implemented at [{{< var ej.full >}}]({{< var ej.url >}}). On the  pages of this website you will find the following information: 
+
+
+##### [**Before You Submit**](before.qmd): 
+
+Read here about our Data and Code Availability Policy and make sure you comply with all requirements before you submit the paper for the first time. Check the cases in which exemptions to the policy can be granted and the procedures to obtain them. If you don't request the exemption at the time of first submission, you will not be able to do it later.
+
+##### [**Best Practices**](best.qmd):
+
+Have a look at our list of recommend best practices for putting together a replication package which will go through the process as smooth as possible. 
+
+##### [**Preparing the package**](package.qmd): 
+
+Learn how to prepare and submit your replication package.
+
+##### [**Reproduce and Replicate {{< var ej.short >}} Papers**](replicate.qmd): 
+
+Looking for reproducible papers to reproduce or replicate? Find here indications on where to find and how to use replication packages of papers published in the Economic Journal (or directly visit the [{{< var ej.full >}}'s community of Zenodo]({{< var ej.zenodo >}})). 
+
+
+
+##### [**Fequently Asked Questions (FAQs)**](faqs.qmd): 
+
+Find a _long_ list of answers to frequently asked questions that can clarify some queries you may have. 
+
+
+##### [**Data Editor**](de.qmd)
+
+Find more about our Data Editor, including contact information. 

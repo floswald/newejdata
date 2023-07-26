@@ -1,0 +1,12 @@
+ej: 
+  long: Economic Journal
+  full: The Economic Journal
+  short: EJ
+  mail: ej@res.org.uk
+  url: https://res.org.uk/journals/the-economic-journal/
+  zenodo: https://zenodo.org/communities/ej-replication-repository
+
+de:
+  full: Florian Oswald
+  mail: ejdataeditor@gmail.com
+  year: 2023
