@@ -4,30 +4,74 @@ title: "{{< var ej.full >}}'s Data Editor Website"
 
 This website provides all the relevant information regarding the Data and Code Availability Policy and pre-acceptance reproducibility checks implemented at [{{< var ej.full >}}]({{< var ej.url >}}). On the  pages of this website you will find the following information: 
 
+::: {.columns}
 
-##### [**Before You Submit**](before.qmd): 
+::: {.column width=32%}
+<div class="card border-secondary mb-3" style="max-width: 15rem;height: 21rem;">
+<div class="card-header">Start Here!</div>
+<div class="card-body" style="padding-top: 0.0rem;">
+<h4 class="card-title">[**Before Submitting Your Package**](before.qmd)</h4>
 
-Read here about our Data and Code Availability Policy and make sure you comply with all requirements before you submit the paper for the first time. Check the cases in which exemptions to the policy can be granted and the procedures to obtain them. If you don't request the exemption at the time of first submission, you will not be able to do it later.
-
-##### [**Best Practices**](best.qmd):
-
-Have a look at our list of recommend best practices for putting together a replication package which will go through the process as smooth as possible. 
-
-##### [**Preparing the package**](package.qmd): 
-
-Learn how to prepare and submit your replication package.
-
-##### [**Reproduce and Replicate {{< var ej.short >}} Papers**](replicate.qmd): 
-
-Looking for reproducible papers to reproduce or replicate? Find here indications on where to find and how to use replication packages of papers published in the Economic Journal (or directly visit the [{{< var ej.full >}}'s community of Zenodo]({{< var ej.zenodo >}})). 
+<p class="card-text">Learn about our Data and Code Availability Policy, possible exemptions to it, and make sure you comply with all requirements before you submit the paper for the first time.</p>
+</div>
+</div>
 
 
 
-##### [**Fequently Asked Questions (FAQs)**](faqs.qmd): 
+<div class="card border-secondary mb-3" style="max-width: 15rem;height:19rem;">
+<div class="card-header">Replicate Our Papers</div>
+<div class="card-body" style="padding-top: 0.0rem;">
+<h4 class="card-title">[**Replicate {{< var ej.short >}} Papers**](replicate.qmd)</h4>
+<p class="card-text">Looking for reproducible papers to reproduce or replicate? Find replication packages of published EJ papers here.</p>
+</div>
+</div>
 
-Find a _long_ list of answers to frequently asked questions that can clarify some queries you may have. 
+:::
+::: {.column width=1%}
+:::
+
+::: {.column width=32%}
+
+<div class="card border-secondary mb-3" style="max-width: 15rem;height: 21rem;">
+<div class="card-header">See what works best.</div>
+<div class="card-body" style="padding-top: 0.0rem;">
+<h4 class="card-title">[**Best Practices**](best.qmd)</h4>
+<p class="card-text">Have a look at our list recommended best practices for putting together a replication package which will go through the process as smooth as possible. Our mission is to help you with that.</p>
+</div>
+</div>
+
+<div class="card border-secondary mb-3" style="max-width: 15rem;height:19rem;">
+<div class="card-header">Questions?</div>
+<div class="card-body" style="padding-top: 0.0rem;">
+<h4 class="card-title">[**FAQs**](faqs.qmd)</h4>
+<p class="card-text">We have collected a _long_ list of good questions and our answers regarding many different aspects of the process, so maybe those can clarify some queries you may have.</p>
+</div>
+</div>
+:::
+
+::: {.column width=1%}
+:::
+
+::: {.column width=32%}
+
+<div class="card border-secondary mb-3" style="max-width: 15rem;height: 21rem;">
+<div class="card-header">Let's Do it.</div>
+<div class="card-body" style="padding-top: 0.0rem;">
+<h4 class="card-title">[**Preparing the package**](package.qmd)</h4>
+<p class="card-text">Learn how to prepare and submit your replication package. We give you precise step by step guidance throughout the process. Come and follow along!
+</p>
+</div>
+</div>
+
+<div class="card border-secondary mb-3" style="max-width: 15rem;height:19rem;">
+<div class="card-header">Who is Who.</div>
+<div class="card-body" style="padding-top: 0.0rem;">
+<h4 class="card-title">[**Data Editor**](de.qmd)</h4>
+<p class="card-text">Find more about our Data Editor, including contact information. </p>
+</div>
+</div>
 
 
-##### [**Data Editor**](de.qmd)
+:::
+:::
 
-Find more about our Data Editor, including contact information. 
