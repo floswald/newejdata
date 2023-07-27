@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -261,20 +295,30 @@ Data Editors Collaborate
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
+<ul>
+<li><p>Always keep your raw data intact (i.e.&nbsp;read-only). Generate separate analysis datasets to perform analysis. After you copied your raw data into the package (<code>rawdata</code> folder), set to read only. Look <a href="https://answers.microsoft.com/en-us/windows/forum/all/read-only-folder/1806c9a6-8ad9-47f7-a3a3-fa41d6a662f4">here for windows tips to set read-only</a>, on <code>*nix</code> systems it’s a</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 444 rawdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Datasets change over time, keep a record of the date and versions you obtained. It might be difficult to obtain it in the future.</p></li>
+</ul>
 </section>
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
+<ul>
+<li>Generate your analysis data using programs, many journals require you to submit them.</li>
+<li>Separate <code>code</code>, <code>data</code> and <code>outputs</code> in your directory structure. This will facilitate (i) keeping versions of your code, and (ii) producing a replication package.</li>
+<li>Stronlgy consider the benefits of <strong>version control</strong> for the reproducibility of your research. Click <a href="https://datacarpentry.org/rr-version-control/">here</a> for a tutorial.</li>
+<li>Use programs/scripts as opposed to command-line instructions!</li>
+<li>Design your code to be run all at once, and not section by section. Create a master file that calls all other subsidiary files.</li>
+<li>Set the paths only once and at the top of the master-file, and then use either relative paths or global variables, so that users don’t have to change the paths in multiple parts of your code.</li>
+<li>Whenever possible, write paths in a way that is compatible across different operating systems. For example, in Stata, always use forward slashes <code>/</code> to separate directories, even if you use Windows.</li>
+<li>If you are using software which requires compilation of source code into executables (e.g.&nbsp;Fortran, C, etc.), please use <code>make</code> files (or else make sure you provide very detailed instructions on how to compile the different files - we accept <code>bash</code> shell scripts).</li>
+<li>Name your files in a wise manner. For example, if your output generates tables and figures as new files, give them names that easily identify them. Also, name your master file as “Main”, “Master” or something similar.</li>
+<li>Use sub-folders when your package includes a lot of files. Make sure that your package includes all relevant folders, even empty folders that will be filled with the outputs from the program.</li>
+</ul>
 </section>
 <section id="output" class="level2">
 <h2 class="anchored" data-anchor-id="output">Output</h2>
 <ul>
-<li><p>Always keep your raw data intact (i.e.&nbsp;read-only). Generate separate analysis datasets to perform analysis.</p></li>
-<li><p>Generate your analysis data using programs, many journals require you to submit them.</p></li>
-<li><p>Datasets change over time, keep a record of the date and versions you obtained. It might be difficult to obtain it in the future.</p></li>
-<li><p>Separate <code>code</code>, <code>data</code> and <code>outputs</code> in your directory structure. This will facilitate (i) keeping versions of your code, and (ii) producing a replication package.</p></li>
-<li><p>Stronlgy consider the benefits of <strong>version control</strong> for the reproducibility of your research. Click <a href="https://datacarpentry.org/rr-version-control/">here</a> for a tutorial.</p></li>
-<li><p>Use programs/scripts as opposed to command-line instructions!</p></li>
-<li><p>Design your code to be run all at once, and not section by section. Create a master file that calls all other subsidiary files.</p></li>
 <li><p>Use log-files and write to disk. Make sure that your code stores the output (both tables and figures) as files on disk (in subdirectory <code>outputs/</code>) as opposed to only showing it on screen while you are executing it.</p></li>
 <li><p>Make your code produce all tables and figures as they appear in the manuscript: you will save a lot of time! We recommend splitting your code into small subunits, each of which produce a dedicated output, for instance a function <code>figure1()</code> which would produce and save the file <code>outputs/figure1.pdf</code> in your package, where <code>outputs/figure1.pdf</code> is included via <code>\input{outputs/figure1.pdf}</code> in the <span class="math inline">\(\LaTeX\)</span> source code of your paper as <em>as Figure 1</em>! Of course the same holds for tables and other output. You could then include the following table in your <code>README</code>, greatly helping our replicators (and yourself 😉):</p>
 <table class="table">
@@ -303,17 +347,10 @@ Data Editors Collaborate
 </tr>
 </tbody>
 </table></li>
-<li><p>Set the paths only once and at the top of the master-file, and then use either relative paths or global variables, so that users don’t have to change the paths in multiple parts of your code.</p></li>
-<li><p>Whenever possible, write paths in a way that is compatible across different operating systems. For example, in Stata, always use forward slashes <code>/</code> to separate directories, even if you use Windows.</p></li>
-<li><p>Run your codes from the replication folder before you submit and make sure it runs and all your results are reproduced.</p>
-<ul>
-<li>Make sure to <strong>delete all expected output from the package before you run it</strong>, so you can be sure that all output was actually produced.</li>
-<li>Ideally, your submitted paper (your <span class="math inline">\(\LaTeX\)</span> file which produces it) <em>should depend on the output of your replication package</em>, so that if a piece of output is missing, the paper cannot be compiled (or you would quickly spot the mistake).</li>
-<li>Help us by submitting your package <strong>without any expected output</strong>, i.e.&nbsp;with an empty folder <code>outputs/</code>.</li>
-</ul></li>
-<li><p>If you are using software which requires compilation of source code into executables (e.g.&nbsp;Fortran, C, etc.), please use <code>make</code> files (or else make sure you provide very detailed instructions on how to compile the different files - we accept <code>bash</code> shell scripts).</p></li>
-<li><p>Name your files in a wise manner. For example, if your output generates tables and figures as new files, give them names that easily identify them. Also, name your master file as “Main”, “Master” or something similar.</p></li>
-<li><p>Use sub-folders when your package includes a lot of files. Make sure that your package includes all relevant folders, even empty folders that will be filled with the outputs from the program.</p></li>
+<li><p>Run your codes from the replication folder before you submit and make sure it runs and all your results are reproduced - ideally on another machine!</p></li>
+<li><p>Make sure to <strong>delete all expected output from the package before you run it</strong>, so you can be sure that all output was actually produced.</p></li>
+<li><p>Ideally, your submitted paper (your <span class="math inline">\(\LaTeX\)</span> file which produces it) <em>should depend on the output of your replication package</em>, so that if a piece of output is missing, the paper cannot be compiled (or you would quickly spot the mistake).</p></li>
+<li><p>Help us by submitting your package <strong>without any expected output</strong>, i.e.&nbsp;with an empty folder <code>outputs/</code>.</p></li>
 </ul>
 
 
