@@ -104,17 +104,28 @@ Notice how this example includes `tex/main.tex` which will produce the final pro
 
 ## Data
 
+* Always keep your raw data intact (i.e. read-only). Generate separate analysis datasets to perform analysis. After you copied your raw data into the package (`rawdata` folder), set to read only. Look [here for windows tips to set read-only](https://answers.microsoft.com/en-us/windows/forum/all/read-only-folder/1806c9a6-8ad9-47f7-a3a3-fa41d6a662f4), on `*nix` systems it's a
+  ```bash
+  chmod 444 rawdata
+  ```
+* Datasets change over time, keep a record of the date and versions you obtained. It might be difficult to obtain it in the future.
+
 ## Code
 
-## Output
-
-* Always keep your raw data intact (i.e. read-only). Generate separate analysis datasets to perform analysis.
 * Generate your analysis data using programs, many journals require you to submit them.
-* Datasets change over time, keep a record of the date and versions you obtained. It might be difficult to obtain it in the future.
 * Separate `code`, `data` and `outputs` in your directory structure. This will facilitate (i) keeping versions of your code, and (ii) producing a replication package.
 * Stronlgy consider the benefits of **version control** for the reproducibility of your research. Click [here](https://datacarpentry.org/rr-version-control/) for a tutorial.
 * Use programs/scripts as opposed to command-line instructions!
 * Design your code to be run all at once, and not section by section. Create a master file that calls all other subsidiary files.
+* Set the paths only once and at the top of the master-file, and then use either relative paths or global variables, so that users don't have to change the paths in multiple parts of your code. 
+* Whenever possible, write paths in a way that is compatible across different operating systems. For example, in Stata, always use forward slashes `/` to separate directories, even if you use Windows.
+* If you are using software which requires compilation of source code into executables (e.g. Fortran, C, etc.), please use `make` files (or else make sure you provide very detailed instructions on how to compile the different files - we accept `bash` shell scripts).
+* Name your files in a wise manner. For example, if your output generates tables and figures as new files, give them names that easily identify them. Also, name your master file as "Main", "Master" or something similar.
+* Use sub-folders when your package includes a lot of files. Make sure that your package includes all relevant folders, even empty folders that will be filled with the outputs from the program.
+
+## Output
+
+
 * Use log-files and write to disk. Make sure that your code stores the output (both tables and figures) as files on disk (in subdirectory `outputs/`) as opposed to only showing it on screen while you are executing it. 
 * Make your code produce all tables and figures as they appear in the manuscript: you will save a lot of time! We recommend splitting your code into small subunits, each of which produce a dedicated output, for instance a function `figure1()` which would produce and save the file `outputs/figure1.pdf` in your package, where `outputs/figure1.pdf` is included via `\input{outputs/figure1.pdf}` in the $\LaTeX$ source code of your paper as _as Figure 1_! Of course the same holds for tables and other output. You could then include the following table in your `README`, greatly helping our replicators (and yourself 😉):
 
@@ -124,13 +135,10 @@ Notice how this example includes `tex/main.tex` which will produce the final pro
     | Figure 1 | `outputs/plots/figure1.pdf` |  `code/figure1.do` |
     | Figure 2 | `outputs/plots/figure2.pdf` |  `code/figure2.do` |
 
-* Set the paths only once and at the top of the master-file, and then use either relative paths or global variables, so that users don't have to change the paths in multiple parts of your code. 
-* Whenever possible, write paths in a way that is compatible across different operating systems. For example, in Stata, always use forward slashes `/` to separate directories, even if you use Windows.
-* Run your codes from the replication folder before you submit and make sure it runs and all your results are reproduced. 
-  * Make sure to **delete all expected output from the package before you run it**, so you can be sure that all output was actually produced. 
-  * Ideally, your submitted paper (your $\LaTeX$ file which produces it) _should depend on the output of your replication package_, so that if a piece of output is missing, the paper cannot be compiled (or you would quickly spot the mistake).
-  * Help us by submitting your package **without any expected output**, i.e. with an empty folder `outputs/`.
-* If you are using software which requires compilation of source code into executables (e.g. Fortran, C, etc.), please use `make` files (or else make sure you provide very detailed instructions on how to compile the different files - we accept `bash` shell scripts).
-* Name your files in a wise manner. For example, if your output generates tables and figures as new files, give them names that easily identify them. Also, name your master file as "Main", "Master" or something similar.
-* Use sub-folders when your package includes a lot of files. Make sure that your package includes all relevant folders, even empty folders that will be filled with the outputs from the program.
+
+* Run your codes from the replication folder before you submit and make sure it runs and all your results are reproduced - ideally on another machine!
+* Make sure to **delete all expected output from the package before you run it**, so you can be sure that all output was actually produced. 
+* Ideally, your submitted paper (your $\LaTeX$ file which produces it) _should depend on the output of your replication package_, so that if a piece of output is missing, the paper cannot be compiled (or you would quickly spot the mistake).
+* Help us by submitting your package **without any expected output**, i.e. with an empty folder `outputs/`.
+
 
