@@ -7,7 +7,7 @@ This website provides all the relevant information regarding the Data and Code A
 ::: {.columns}
 
 ::: {.column width=32%}
-<div class="card border-secondary mb-3" style="max-width: 15rem;height: 21rem;">
+<div class="card border-secondary mb-3" style="max-width: 15rem;min-height: 21rem;">
 <div class="card-header">Start Here!</div>
 <div class="card-body" style="padding-top: 0.0rem;">
 <h4 class="card-title">[**Before Submitting Your Package**](before.qmd)</h4>
@@ -18,7 +18,7 @@ This website provides all the relevant information regarding the Data and Code A
 
 
 
-<div class="card border-secondary mb-3" style="max-width: 15rem;height:19rem;">
+<div class="card border-secondary mb-3" style="max-width: 15rem;min-height: 19rem;">
 <div class="card-header">Replicate Our Papers</div>
 <div class="card-body" style="padding-top: 0.0rem;">
 <h4 class="card-title">[**Replicate {{< var ej.short >}} Papers**](replicate.qmd)</h4>
@@ -32,7 +32,7 @@ This website provides all the relevant information regarding the Data and Code A
 
 ::: {.column width=32%}
 
-<div class="card border-secondary mb-3" style="max-width: 15rem;height: 21rem;">
+<div class="card border-secondary mb-3" style="max-width: 15rem;min-height: 21rem;">
 <div class="card-header">See what works best.</div>
 <div class="card-body" style="padding-top: 0.0rem;">
 <h4 class="card-title">[**Best Practices**](best.qmd)</h4>
@@ -40,7 +40,7 @@ This website provides all the relevant information regarding the Data and Code A
 </div>
 </div>
 
-<div class="card border-secondary mb-3" style="max-width: 15rem;height:19rem;">
+<div class="card border-secondary mb-3" style="max-width: 15rem;min-height: 19rem;">
 <div class="card-header">Questions?</div>
 <div class="card-body" style="padding-top: 0.0rem;">
 <h4 class="card-title">[**FAQs**](faqs.qmd)</h4>
@@ -54,7 +54,7 @@ This website provides all the relevant information regarding the Data and Code A
 
 ::: {.column width=32%}
 
-<div class="card border-secondary mb-3" style="max-width: 15rem;height: 21rem;">
+<div class="card border-secondary mb-3" style="max-width: 15rem;min-height: 21rem;">
 <div class="card-header">Let's Do it.</div>
 <div class="card-body" style="padding-top: 0.0rem;">
 <h4 class="card-title">[**Preparing the package**](package.qmd)</h4>
@@ -63,7 +63,7 @@ This website provides all the relevant information regarding the Data and Code A
 </div>
 </div>
 
-<div class="card border-secondary mb-3" style="max-width: 15rem;height:19rem;">
+<div class="card border-secondary mb-3" style="max-width: 15rem;min-height: 19rem;">
 <div class="card-header">Who is Who.</div>
 <div class="card-body" style="padding-top: 0.0rem;">
 <h4 class="card-title">[**Data Editor**](de.qmd)</h4>
